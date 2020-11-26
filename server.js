@@ -37,11 +37,11 @@ app.get("/todos/create", (req, res) => {
 });
 
 app.get("/todos/:id/delete", function(req, res) {
-  var id = parseInt(req.params.id);
-  var user = db
-    .get("user")
-    .find({ id: id })
-    .value();
+  var id = req.params.id;
+  // var user1 = db
+  //   .get("user")
+  //   .filter({ id: id })
+  //   .value();
 
   db.get("user")
     .remove({ id: id })
