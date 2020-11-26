@@ -1,16 +1,12 @@
 {
   "user": [
     {
-      "id": 1,
-      "name": "Lan"
-    },
-    {
       "id": "2",
       "name": "phong"
     },
     {
       "id": "3",
       "name": "tôn"
-    }
+    },
   ]
 }
