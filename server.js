@@ -20,7 +20,7 @@ app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 });
 // database
-db.defaults({ todos: [] })
+db.defaults({ user: [] })
   .write()
 //
 app.get('/', (req, res) => {
@@ -44,14 +44,13 @@ app.post("/todos/create", (req, res) => {
 app.get("/todos/:id", function(req, res){
 	var id = parseInt(req.params.id);
 	var user = db.get('todos').find({ id: id}).value();
+  
 	res.render("view",{
-		todo: user
+		user: user
 	});
 });
 app.post("/todos/create", (req, res) => {
-	console.log(req.body);
-
-    db.get('user').push(req.body).write();
+    db.get('todos').push(req.body).write();
     res.redirect("/todos");
   
 });
