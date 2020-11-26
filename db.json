@@ -1,21 +1,16 @@
 {
-  "todos": [
+  "user": [
     {
       "id": 1,
-      "text": "blah"
+      "name": "Lan"
     },
     {
       "id": "2",
-      "text": "phong"
+      "name": "phong"
     },
     {
       "id": "3",
-      "text": "tôn"
-    },
-    {
-      "id": "23",
-      "text": "phong"
+      "name": "tôn"
     }
-  ],
-  "user": []
+  ]
 }

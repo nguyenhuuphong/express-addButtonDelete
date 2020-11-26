@@ -8,6 +8,7 @@ const low = require('lowdb');
 const FileSync = require('lowdb/adapters/FileSync');
 const adapter = new FileSync('db.json');
 const db = low(adapter);
+const shortid = require("shortid");
 
 
 app.use(bodyParser.json()) // for parsing application/json
@@ -29,28 +30,28 @@ app.get('/', (req, res) => {
 
 app.get("/todos", (req, res) => {
   res.render( "index", {
-    todo: db.get('todos').value()
+    todo: db.get('user').value()
 });
 });  
 
 app.get("/todos/create",(req, res) => {
 	res.render("create");
 });
-app.post("/todos/create", (req, res) => {
-    db.get('todos').push(req.body).write();
-    res.redirect("/todos");
-  
-});
+
 app.get("/todos/:id", function(req, res){
 	var id = parseInt(req.params.id);
-	var user = db.get('todos').find({ id: id}).value();
-  
+	var user = db.get('user').find({ id: id}).value();
+
+	console.log(id)
+
 	res.render("view",{
 		user: user
 	});
 });
 app.post("/todos/create", (req, res) => {
-    db.get('todos').push(req.body).write();
+	console.log(req.body);
+
+    db.get('user').push(req.body).write();
     res.redirect("/todos");
   
 });
