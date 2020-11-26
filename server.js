@@ -43,9 +43,10 @@ app.get("/todos/:id/delete", function(req, res){
 	var user = db.get('user').find({ id: id}).value();
 
   delete  
+  
 	//res.render("view",{
 		//user: user
-	//});
+	});
 });
 app.post("/todos/create", (req, res) => {
 	console.log(req.body);
