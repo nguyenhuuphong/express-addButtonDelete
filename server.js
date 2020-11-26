@@ -41,5 +41,17 @@ app.post("/todos/create", (req, res) => {
     res.redirect("/todos");
   
 });
-app
+app.get("/todos/:id", function(req, res){
+	var id = parseInt(req.params.id);
+	var user = db.get('todos').find({ id: id}).value();
+	res.render("view",{
+		todo: user
+	});
+});
+app.post("/todos/create", (req, res) => {
+	console.log(req.body);
 
+    db.get('user').push(req.body).write();
+    res.redirect("/todos");
+  
+});

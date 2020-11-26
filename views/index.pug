@@ -5,8 +5,8 @@ form(action="/todos", method="GET")
      input(type/text, name="q")
      button search
 ul 
-   each user in todo
-   li 
-      span= user.name
-      span &nbsp;
-      a(href='/todos/' + user.id + '/delete') xóa
+  each user in todo
+  li
+    span= user.name
+    span &nbsp;
+    a(href='/todos/' + user.id) xóa
