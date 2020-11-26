@@ -38,15 +38,14 @@ app.get("/todos/create",(req, res) => {
 	res.render("create");
 });
 
-app.get("/todos/:id", function(req, res){
+app.get("/todos/:id/delete", function(req, res){
 	var id = parseInt(req.params.id);
 	var user = db.get('user').find({ id: id}).value();
 
-	console.log(id)
-
-	res.render("view",{
-		user: user
-	});
+  delete  
+	//res.render("view",{
+		//user: user
+	//});
 });
 app.post("/todos/create", (req, res) => {
 	console.log(req.body);
