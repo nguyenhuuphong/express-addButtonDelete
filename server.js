@@ -46,11 +46,11 @@ app.get("/todos/:id/delete", function(req, res) {
   db.get("user")
     .remove({ id: id })
     .write();
+  
   res.redirect("back");
 });
-app.post("/todos/create", (req, res) => {
-  console.log(req.body);
 
+app.post("/todos/create", (req, res) => {
   db.get("user")
     .push(req.body)
     .write();
